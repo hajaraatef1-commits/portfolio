@@ -15,7 +15,6 @@ if (localStorage.getItem("theme") === "sombre") {
     if (themeToggle) {
         themeToggle.textContent = "☀️";
     }
-
 }
 
 if (themeToggle) {
@@ -24,11 +23,16 @@ if (themeToggle) {
 
         document.body.classList.toggle("mode-sombre");
 
-        const estSombre = document.body.classList.contains("mode-sombre");
+        const estSombre =
+            document.body.classList.contains("mode-sombre");
 
-        themeToggle.textContent = estSombre ? "☀️" : "🌙";
+        themeToggle.textContent =
+            estSombre ? "☀️" : "🌙";
 
-        localStorage.setItem("theme", estSombre ? "sombre" : "clair");
+        localStorage.setItem(
+            "theme",
+            estSombre ? "sombre" : "clair"
+        );
 
     });
 
@@ -37,23 +41,26 @@ if (themeToggle) {
 
 // ================= ANIMATION AU DÉFILEMENT =================
 
-const sectionsAnimees = document.querySelectorAll(".fade-section");
+const sectionsAnimees =
+    document.querySelectorAll(".fade-section");
 
-const observateur = new IntersectionObserver(function(entrees) {
+const observateur =
+    new IntersectionObserver(function(entrees) {
 
-    entrees.forEach(function(entree) {
+        entrees.forEach(function(entree) {
 
-        if (entree.isIntersecting) {
+            if (entree.isIntersecting) {
 
-            entree.target.classList.add("visible");
+                entree.target.classList.add("visible");
 
-        }
+            }
 
+        });
+
+    }, {
+        threshold: 0.15
     });
 
-}, {
-    threshold: 0.15
-});
 
 sectionsAnimees.forEach(function(section) {
 
@@ -64,7 +71,8 @@ sectionsAnimees.forEach(function(section) {
 
 // ================= BOUTON RETOUR EN HAUT =================
 
-const boutonHaut = document.querySelector("#retour-haut");
+const boutonHaut =
+    document.querySelector("#retour-haut");
 
 if (boutonHaut) {
 
@@ -82,46 +90,15 @@ if (boutonHaut) {
 
     });
 
+
     boutonHaut.addEventListener("click", function() {
 
         window.scrollTo({
+
             top: 0,
             behavior: "smooth"
+
         });
-
-    });
-
-}
-
-
-// ================= FORMULAIRE =================
-
-
-const formulaire = document.querySelector("#contact-form");
-
-if (formulaire) {
-
-    formulaire.addEventListener("submit", function(event) {
-
-        event.preventDefault();
-
-        const nom = document.querySelector("#nom").value;
-        const email = document.querySelector("#email").value;
-        const message = document.querySelector("#message").value;
-
-        if (nom === "" || email === "" || message === "") {
-
-            alert("Veuillez remplir tous les champs.");
-
-            return;
-        }
-
-        alert(
-            "Merci " + nom +
-            " ! Votre message a bien été envoyé."
-        );
-
-        formulaire.reset();
 
     });
 
@@ -130,19 +107,23 @@ if (formulaire) {
 
 // ================= ANIMATION DES PROJETS =================
 
-const projets = document.querySelectorAll(".project-card");
+const projets =
+    document.querySelectorAll(".project-card");
 
 projets.forEach(function(projet) {
 
     projet.addEventListener("mouseenter", function() {
 
-        projet.style.transform = "translateY(-8px)";
+        projet.style.transform =
+            "translateY(-8px)";
 
     });
 
+
     projet.addEventListener("mouseleave", function() {
 
-        projet.style.transform = "translateY(0)";
+        projet.style.transform =
+            "translateY(0)";
 
     });
 
@@ -151,7 +132,8 @@ projets.forEach(function(projet) {
 
 // ================= COMPÉTENCES =================
 
-const competences = document.querySelectorAll(".skill-card");
+const competences =
+    document.querySelectorAll(".skill-card");
 
 competences.forEach(function(skill) {
 
@@ -166,15 +148,19 @@ competences.forEach(function(skill) {
 
 // ================= ANNÉE FOOTER =================
 
-const annee = document.querySelector("#annee");
+const annee =
+    document.querySelector("#annee");
 
 if (annee) {
 
-    annee.textContent = new Date().getFullYear();
+    annee.textContent =
+        new Date().getFullYear();
 
 }
 
 
 // ================= MESSAGE CONSOLE =================
 
-console.log("Portfolio de Hajar Aatef chargé avec succès.");
+console.log(
+    "Portfolio de Hajar Aatef chargé avec succès."
+);
