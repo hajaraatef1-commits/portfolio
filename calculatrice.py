@@ -1,0 +1,109 @@
+# ==============================
+# CALCULATRICE
+# ==============================
+
+
+def addition(a, b):
+    return a + b
+
+
+def soustraction(a, b):
+    return a - b
+
+
+def multiplication(a, b):
+    return a * b
+
+
+def division(a, b):
+
+    if b == 0:
+        return "Impossible de diviser par zéro"
+
+    return a / b
+
+
+def puissance(a, b):
+    return a ** b
+
+
+def pourcentage(a, b):
+    return (a * b) / 100
+
+
+# ==============================
+# PROGRAMME PRINCIPAL
+# ==============================
+
+while True:
+
+    print("\n==============================")
+    print("       CALCULATRICE")
+    print("==============================")
+
+    print("1. Addition")
+    print("2. Soustraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Puissance")
+    print("6. Pourcentage")
+    print("7. Quitter")
+
+    choix = input("\nChoisissez une opération : ")
+
+    if choix == "7":
+
+        print("Calculatrice terminée.")
+
+        break
+
+
+    if choix in ["1", "2", "3", "4", "5", "6"]:
+
+        try:
+
+            a = float(input("Donnez le premier nombre : "))
+            b = float(input("Donnez le deuxième nombre : "))
+
+
+            if choix == "1":
+
+                resultat = addition(a, b)
+
+
+            elif choix == "2":
+
+                resultat = soustraction(a, b)
+
+
+            elif choix == "3":
+
+                resultat = multiplication(a, b)
+
+
+            elif choix == "4":
+
+                resultat = division(a, b)
+
+
+            elif choix == "5":
+
+                resultat = puissance(a, b)
+
+
+            elif choix == "6":
+
+                resultat = pourcentage(a, b)
+
+
+            print("\nRésultat :", resultat)
+
+
+        except ValueError:
+
+            print("Erreur : veuillez entrer des nombres.")
+
+
+    else:
+
+        print("Choix invalide.")
