@@ -169,8 +169,8 @@ section {
 /* ================= PHOTO ================= */
 
 .photo {
-    width: 230px;
-    height: 230px;
+    width: 200px;
+    height: 200px;
 
     margin: 0 auto 30px;
 
@@ -190,6 +190,8 @@ section {
     object-fit: cover;
 
     border: 5px solid white;
+
+    display: block;
 }
 
 
